@@ -41,11 +41,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const squares = document.querySelectorAll('.grid');
         squares.forEach(square => {
             square.addEventListener('mouseover', function(event) {
-                event.target.style.backgroundColor = 'black';
+                // event.target.style.backgroundColor = 'black';
+                const randomColor = getRandomColor();
+                event.target.style.backgroundColor = randomColor;
             });
         });
     }
 
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    };
+
+    
     const changeButton = document.getElementsByClassName('new');
 
     function changeGrid() {
