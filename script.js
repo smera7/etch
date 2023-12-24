@@ -66,7 +66,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Get the value from the input field
         const inputValue = inputText.value;
-
+        // alert if the input is not a number between 1 and 64
+        if (inputValue < 1 || inputValue > 64) {
+            alert("Please enter a number between 1 and 64");
+            return;
+        }
         // Call your desired function with the input value
         changeGrid(inputValue);
     }
